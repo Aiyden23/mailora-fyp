@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Profile | Mailora
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <span class="threat-badge safe">
+
+        PROFILE MANAGEMENT
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Update Profile
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:720px;
+        margin-top:18px;
+    ">
+
+        Manage your Mailora profile
+        information and maintain
+        enterprise cybersecurity identity
+        records.
+
+    </p>
+
+</div>
+
+<div class="result-box" style="
+    max-width:750px;
+    margin:auto;
+">
+
+    <div class="table-header">
+
+        <h2>
+
+            Profile Information
+
+        </h2>
+
+        <span class="threat-badge high">
+
+            VERIFIED
+
+        </span>
+
+    </div>
+
+    {% if message %}
+
+    <div style="
+        background:rgba(60,177,121,0.10);
+        border:1px solid rgba(60,177,121,0.20);
+        color:#3CB179;
+        padding:14px;
+        border-radius:14px;
+        margin-bottom:24px;
+    ">
+
+        {{ message }}
+
+    </div>
+
+    {% endif %}
+
+    <form method="POST">
+
+        <!-- FULL NAME -->
+
+        <div class="enterprise-input-group">
+
+            <label>
+
+                FULL NAME
+
+            </label>
+
+            <input type="text" name="fullname" value="{{ user['fullname'] }}" required>
+
+        </div>
+
+        <!-- USERNAME -->
+
+        <div class="enterprise-input-group" style="margin-top:22px;">
+
+            <label>
+
+                USERNAME
+
+            </label>
+
+            <input type="text" value="{{ user['username'] }}" readonly>
+
+        </div>
+
+        <!-- CONTACT -->
+
+        <div class="enterprise-input-group" style="margin-top:22px;">
+
+            <label>
+
+                CONTACT INFORMATION
+
+            </label>
+
+            <input type="text" name="contact" value="{{ user['contact'] }}" required>
+
+        </div>
+
+        <div class="action-buttons" style="margin-top:30px;">
+
+            <button type="submit">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Changes
+
+            </button>
+
+            <a href="/account" style="text-decoration:none;">
+
+                <button type="button" class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

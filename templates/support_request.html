@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}
+Support Request | Mailora
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <span class="threat-badge high">
+
+        ENTERPRISE SUPPORT
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Submit Support Request
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:780px;
+        margin-top:18px;
+    ">
+
+        Contact the Mailora support team for
+        technical assistance, platform guidance,
+        cybersecurity investigations, or account
+        management inquiries.
+
+    </p>
+
+</div>
+
+<div class="result-box" style="
+    max-width:850px;
+    margin:auto;
+">
+
+    <div class="table-header">
+
+        <h2>
+
+            Support Ticket
+
+        </h2>
+
+        <span class="threat-badge safe">
+
+            AVAILABLE
+
+        </span>
+
+    </div>
+
+    {% if message %}
+
+    <div style="
+        background:rgba(60,177,121,0.10);
+        border:1px solid rgba(60,177,121,0.25);
+        color:#3CB179;
+        padding:14px;
+        border-radius:14px;
+        margin-bottom:24px;
+    ">
+
+        {{ message }}
+
+    </div>
+
+    {% endif %}
+
+    <form method="POST">
+
+        <!-- FULL NAME -->
+
+        <div class="enterprise-input-group">
+
+            <label>
+
+                FULL NAME
+
+            </label>
+
+            <input type="text" name="name" required>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="enterprise-input-group" style="margin-top:22px;">
+
+            <label>
+
+                EMAIL ADDRESS
+
+            </label>
+
+            <input type="email" name="email" required>
+
+        </div>
+
+        <!-- CATEGORY -->
+
+        <div class="enterprise-input-group" style="margin-top:22px;">
+
+            <label>
+
+                REQUEST CATEGORY
+
+            </label>
+
+            <select name="category" required>
+
+                <option>
+                    Technical Support
+                </option>
+
+                <option>
+                    Threat Analyzer
+                </option>
+
+                <option>
+                    Threat Simulator
+                </option>
+
+                <option>
+                    Cyber Academy
+                </option>
+
+                <option>
+                    Investigation Center
+                </option>
+
+                <option>
+                    Account Management
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="enterprise-input-group" style="margin-top:22px;">
+
+            <label>
+
+                MESSAGE
+
+            </label>
+
+            <textarea name="message" rows="6" required style="
+                    width:100%;
+                    padding:14px;
+                    border-radius:12px;
+                    background:#0F172A;
+                    color:white;
+                    border:1px solid rgba(255,255,255,0.08);
+                "></textarea>
+
+        </div>
+
+        <div class="action-buttons" style="margin-top:30px;">
+
+            <button type="submit">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Submit Request
+
+            </button>
+
+            <a href="/help" style="text-decoration:none;">
+
+                <button type="button" class="secondary-btn">
+
+                    Back to Help Center
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

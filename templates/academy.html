@@ -1,0 +1,1158 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cyber Academy | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     HERO HEADER
+========================================= -->
+
+<div style="
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #071224,
+        #020817
+    );
+
+    border:1px solid rgba(212,166,79,0.12);
+
+    border-radius:34px;
+
+    padding:50px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+    0 0 40px rgba(212,166,79,0.06);
+">
+
+    <!-- GLOW -->
+
+    <div style="
+        position:absolute;
+        right:-120px;
+        top:-120px;
+
+        width:300px;
+        height:300px;
+
+        background:rgba(212,166,79,0.08);
+
+        filter:blur(90px);
+
+        border-radius:50%;
+    "></div>
+
+    <span class="threat-badge high">
+
+        ENTERPRISE CYBER INTELLIGENCE TRAINING
+
+    </span>
+
+    <h1 style="
+        font-size:58px;
+        margin-top:24px;
+        line-height:1.1;
+        color:white;
+        max-width:850px;
+    ">
+
+        Mailora Cyber Academy
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:20px;
+        line-height:2;
+        color:#9BA6B7;
+    ">
+
+        Advanced cybersecurity awareness and intelligence-driven
+        phishing education platform designed to strengthen
+        enterprise cyber resilience through immersive training modules,
+        behavioral threat analysis, and executive intelligence learning.
+
+    </p>
+
+    <!-- STATS -->
+
+    <div style="
+        display:flex;
+        gap:18px;
+        flex-wrap:wrap;
+        margin-top:34px;
+    ">
+
+        <div style="
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.06);
+            padding:18px 24px;
+            border-radius:20px;
+            min-width:180px;
+        ">
+
+            <span style="
+                color:#8B98AE;
+                font-size:12px;
+                letter-spacing:1px;
+            ">
+                ACTIVE MODULES
+            </span>
+
+            <h2 style="
+                color:white;
+                margin-top:10px;
+                font-size:34px;
+            ">
+                04
+            </h2>
+
+        </div>
+
+        <div style="
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.06);
+            padding:18px 24px;
+            border-radius:20px;
+            min-width:180px;
+        ">
+
+            <span style="
+                color:#8B98AE;
+                font-size:12px;
+                letter-spacing:1px;
+            ">
+                COMPLETED
+            </span>
+
+            <h2 style="
+                color:#F4C56A;
+                margin-top:10px;
+                font-size:34px;
+            ">
+                {{ session.get('completed_modules', [])|length }}
+            </h2>
+
+        </div>
+
+        <div style="
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.06);
+            padding:18px 24px;
+            border-radius:20px;
+            min-width:220px;
+        ">
+
+            <span style="
+                color:#8B98AE;
+                font-size:12px;
+                letter-spacing:1px;
+            ">
+                TRAINING STATUS
+            </span>
+
+            <h2 style="
+                color:#3CB179;
+                margin-top:10px;
+                font-size:34px;
+            ">
+                ACTIVE
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     MODULE GRID
+========================================= -->
+
+<div class="academy-grid">
+
+    <!-- MODULE 1 -->
+
+    <div style="
+        background:linear-gradient(
+            135deg,
+            #071224,
+            #020817
+        );
+
+        border:1px solid rgba(212,166,79,0.14);
+
+        border-radius:30px;
+
+        padding:30px;
+
+        position:relative;
+
+        overflow:hidden;
+
+        transition:0.3s;
+
+        box-shadow:
+        0 0 30px rgba(212,166,79,0.04);
+    ">
+
+        <div style="
+            position:absolute;
+            top:0;
+            left:0;
+
+            width:100%;
+            height:4px;
+
+            background:linear-gradient(
+                90deg,
+                #D4A64F,
+                transparent
+            );
+        "></div>
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:26px;
+        ">
+
+            <div class="card-icon orange">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </div>
+
+            <span style="
+                background:rgba(212,166,79,0.12);
+                color:#F4C56A;
+                padding:8px 14px;
+                border-radius:30px;
+                font-size:11px;
+                letter-spacing:1px;
+                font-weight:700;
+            ">
+
+                THREAT INTELLIGENCE
+
+            </span>
+
+        </div>
+
+        <h2 style="
+            color:white;
+            font-size:28px;
+            line-height:1.3;
+        ">
+
+            Phishing Fundamentals
+
+        </h2>
+
+        <p style="
+            color:#9BA6B7;
+            margin-top:18px;
+            line-height:1.9;
+            font-size:15px;
+        ">
+
+            Learn phishing indicators,
+            enterprise email deception,
+            credential harvesting,
+            and cyber attack behavior analysis.
+
+        </p>
+
+        <!-- METADATA -->
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr;
+            gap:16px;
+            margin-top:28px;
+        ">
+
+
+            <div style="
+                background:rgba(255,255,255,0.03);
+                border-radius:18px;
+                padding:16px;
+            ">
+
+                <span style="
+                    color:#8B98AE;
+                    font-size:11px;
+                    letter-spacing:1px;
+                ">
+                    DURATION
+                </span>
+
+                <h4 style="
+                    color:#4D7CFE;
+                    margin-top:10px;
+                ">
+                    45 Minutes
+                </h4>
+
+            </div>
+
+        </div>
+
+        <!-- PROGRESS -->
+
+        <div style="margin-top:28px;">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                margin-bottom:10px;
+            ">
+
+                <span style="
+                    color:#A8B3C7;
+                    font-size:13px;
+                ">
+                    Training Progress
+                </span>
+
+                <span style="
+                    color:#F4C56A;
+                    font-size:13px;
+                    font-weight:600;
+                ">
+
+                    {% if 1 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    0%
+                    {% endif %}
+
+                </span>
+
+            </div>
+
+            <div style="
+                width:100%;
+                height:10px;
+                background:#0B1325;
+                border-radius:30px;
+                overflow:hidden;
+            ">
+
+                <div style="
+                    height:100%;
+                    background:linear-gradient(
+                        90deg,
+                        #D4A64F,
+                        #F4C56A
+                    );
+
+                    width:
+                    {% if 1 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    8%
+                    {% endif %};
+                "></div>
+
+            </div>
+
+        </div>
+
+        <a href="/module/1/chapter/1">
+
+            <button style="
+                margin-top:32px;
+                width:100%;
+                background:linear-gradient(
+                    135deg,
+                    #D4A64F,
+                    #C99732
+                );
+
+                border:none;
+
+                color:#020817;
+
+                padding:16px;
+
+                border-radius:16px;
+
+                font-size:15px;
+                font-weight:700;
+
+                cursor:pointer;
+            ">
+
+                {% if 1 in session.get('completed_modules', []) %}
+                ✓ Intelligence Reviewed
+                {% else %}
+                Begin Training →
+                {% endif %}
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- MODULE 2 -->
+
+    <div style="
+        background:linear-gradient(
+            135deg,
+            #071224,
+            #020817
+        );
+
+        border:1px solid rgba(212,166,79,0.14);
+
+        border-radius:30px;
+
+        padding:30px;
+
+        position:relative;
+
+        overflow:hidden;
+
+        transition:0.3s;
+
+        box-shadow:
+        0 0 30px rgba(212,166,79,0.04);
+    ">
+
+        <div style="
+            position:absolute;
+            top:0;
+            left:0;
+
+            width:100%;
+            height:4px;
+
+            background:linear-gradient(
+                90deg,
+                #D4A64F,
+                transparent
+            );
+        "></div>
+
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:26px;
+        ">
+
+            <div class="card-icon blue">
+
+                <i class="fa-solid fa-link"></i>
+
+            </div>
+
+            <span style="
+                background:rgba(212,166,79,0.12);
+                color:#F4C56A;
+                padding:8px 14px;
+                border-radius:30px;
+                font-size:11px;
+                letter-spacing:1px;
+                font-weight:700;
+            ">
+
+                URL ANALYSIS
+
+            </span>
+
+        </div>
+
+        <h2 style="
+            color:white;
+            font-size:28px;
+            line-height:1.3;
+        ">
+
+            URL Intelligence
+
+        </h2>
+
+        <p style="
+            color:#9BA6B7;
+            margin-top:18px;
+            line-height:1.9;
+            font-size:15px;
+        ">
+
+            Analyze malicious domains,
+            redirect attacks,
+            and phishing infrastructure.
+
+        </p>
+
+        <!-- METADATA -->
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr;
+            gap:16px;
+            margin-top:28px;
+        ">
+
+            <div style="
+                background:rgba(255,255,255,0.03);
+                border-radius:18px;
+                padding:16px;
+            ">
+
+                <span style="
+                    color:#8B98AE;
+                    font-size:11px;
+                    letter-spacing:1px;
+                ">
+
+                    DURATION
+                </span>
+
+                <h4 style="
+                    color:#4D7CFE;
+                    margin-top:10px;
+                ">
+                    60 Minutes
+                </h4>
+
+            </div>
+
+        </div>
+
+        <!-- PROGRESS -->
+
+        <div style="margin-top:28px;">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                margin-bottom:10px;
+            ">
+
+                <span style="
+                    color:#A8B3C7;
+                    font-size:13px;
+                ">
+                    Training Progress
+                </span>
+
+                <span style="
+                    color:#F4C56A;
+                    font-size:13px;
+                    font-weight:600;
+                ">
+
+                    {% if 2 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    0%
+                    {% endif %}
+
+                </span>
+
+            </div>
+
+            <div style="
+                width:100%;
+                height:10px;
+                background:#0B1325;
+                border-radius:30px;
+                overflow:hidden;
+            ">
+
+                <div style="
+                    height:100%;
+                    background:linear-gradient(
+                        90deg,
+                        #D4A64F,
+                        #F4C56A
+                    );
+
+                    width:
+                    {% if 2 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    8%
+                    {% endif %};
+                "></div>
+
+            </div>
+
+        </div>
+
+        {% if 1 in session.get('completed_modules', []) %}
+        <a href="/module/2/chapter/1">
+
+            <button style="
+                margin-top:32px;
+                width:100%;
+                background:linear-gradient(
+                    135deg,
+                    #D4A64F,
+                    #C99732
+                );
+
+                border:none;
+
+                color:#020817;
+
+                padding:16px;
+
+                border-radius:16px;
+
+                font-size:15px;
+                font-weight:700;
+
+                cursor:pointer;
+            ">
+
+                {% if 2 in session.get('completed_modules', []) %}
+                ✓ Intelligence Reviewed
+                {% else %}
+                Begin Training →
+                {% endif %}
+
+            </button>
+
+        </a>
+        {% else %}
+
+        <button disabled style="
+    margin-top:32px;
+    width:100%;
+
+    background:#0B1325;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#8B98AE;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    font-size:15px;
+    font-weight:700;
+
+    opacity:0.6;
+
+    cursor:not-allowed;
+">
+
+            🔒 Locked
+
+        </button>
+
+        {% endif %}
+
+    </div>
+
+    <!-- MODULE 3 -->
+
+    <div style="
+    background:linear-gradient(
+        135deg,
+        #071224,
+        #020817
+    );
+
+    border:1px solid rgba(212,166,79,0.14);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 30px rgba(212,166,79,0.04);
+">
+
+        <div style="
+        position:absolute;
+        top:0;
+        left:0;
+
+        width:100%;
+        height:4px;
+
+        background:linear-gradient(
+            90deg,
+            #D4A64F,
+            transparent
+        );
+    "></div>
+
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        margin-bottom:26px;
+    ">
+
+            <div class="card-icon red">
+
+                <i class="fa-solid fa-user-secret"></i>
+
+            </div>
+
+            <span style="
+            background:rgba(212,166,79,0.12);
+            color:#F4C56A;
+            padding:8px 14px;
+            border-radius:30px;
+            font-size:11px;
+            letter-spacing:1px;
+            font-weight:700;
+        ">
+
+                HUMAN THREAT ANALYSIS
+
+            </span>
+
+        </div>
+
+        <h2 style="
+        color:white;
+        font-size:28px;
+        line-height:1.3;
+    ">
+
+            Social Engineering
+
+        </h2>
+
+        <p style="
+        color:#9BA6B7;
+        margin-top:18px;
+        line-height:1.9;
+        font-size:15px;
+    ">
+
+            Understand manipulation tactics,
+            executive impersonation,
+            and psychological attacks.
+
+        </p>
+
+        <div style="
+        display:grid;
+        grid-template-columns:1fr;
+        gap:16px;
+        margin-top:28px;
+    ">
+
+            <div style="
+            background:rgba(255,255,255,0.03);
+            border-radius:18px;
+            padding:16px;
+        ">
+
+                <span style="
+                color:#8B98AE;
+                font-size:11px;
+                letter-spacing:1px;
+            ">
+
+                    DURATION
+
+                </span>
+
+                <h4 style="
+                color:#4D7CFE;
+                margin-top:10px;
+            ">
+
+                    50 Minutes
+
+                </h4>
+
+            </div>
+
+        </div>
+
+        <div style="margin-top:28px;">
+
+            <div style="
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:10px;
+        ">
+
+                <span style="
+                color:#A8B3C7;
+                font-size:13px;
+            ">
+                    Training Progress
+                </span>
+
+                <span style="
+                color:#F4C56A;
+                font-size:13px;
+                font-weight:600;
+            ">
+
+                    {% if 3 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    0%
+                    {% endif %}
+
+                </span>
+
+            </div>
+
+            <div style="
+            width:100%;
+            height:10px;
+            background:#0B1325;
+            border-radius:30px;
+            overflow:hidden;
+        ">
+
+                <div style="
+                height:100%;
+                background:linear-gradient(
+                    90deg,
+                    #D4A64F,
+                    #F4C56A
+                );
+
+                width:
+                {% if 3 in session.get('completed_modules', []) %}
+                100%
+                {% else %}
+                8%
+                {% endif %};
+            "></div>
+
+            </div>
+
+        </div>
+
+        {% if 2 in session.get('completed_modules', []) %}
+
+        <a href="/module/3/chapter/1">
+
+            <button style="
+            margin-top:32px;
+            width:100%;
+            background:linear-gradient(
+                135deg,
+                #D4A64F,
+                #C99732
+            );
+
+            border:none;
+
+            color:#020817;
+
+            padding:16px;
+
+            border-radius:16px;
+
+            font-size:15px;
+            font-weight:700;
+
+            cursor:pointer;
+        ">
+
+                {% if 3 in session.get('completed_modules', []) %}
+                ✓ Intelligence Reviewed
+                {% else %}
+                Begin Training →
+                {% endif %}
+
+            </button>
+
+        </a>
+
+        {% else %}
+
+        <button disabled style="
+        margin-top:32px;
+        width:100%;
+        background:#0B1325;
+        border:1px solid rgba(255,255,255,0.08);
+        color:#8B98AE;
+        padding:16px;
+        border-radius:16px;
+        font-size:15px;
+        font-weight:700;
+        opacity:0.6;
+        cursor:not-allowed;
+    ">
+
+            🔒 Locked
+
+        </button>
+
+        {% endif %}
+
+    </div>
+
+    <!-- MODULE 4 -->
+
+    <div style="
+    background:linear-gradient(
+        135deg,
+        #071224,
+        #020817
+    );
+
+    border:1px solid rgba(212,166,79,0.14);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 30px rgba(212,166,79,0.04);
+">
+
+        <div style="
+        position:absolute;
+        top:0;
+        left:0;
+
+        width:100%;
+        height:4px;
+
+        background:linear-gradient(
+            90deg,
+            #D4A64F,
+            transparent
+        );
+    "></div>
+
+        <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        margin-bottom:26px;
+    ">
+
+            <div class="card-icon green">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <span style="
+            background:rgba(212,166,79,0.12);
+            color:#F4C56A;
+            padding:8px 14px;
+            border-radius:30px;
+            font-size:11px;
+            letter-spacing:1px;
+            font-weight:700;
+        ">
+
+                AI CYBER INTELLIGENCE
+
+            </span>
+
+        </div>
+
+        <h2 style="
+        color:white;
+        font-size:28px;
+        line-height:1.3;
+    ">
+
+            AI Threat Intelligence
+
+        </h2>
+
+        <p style="
+        color:#9BA6B7;
+        margin-top:18px;
+        line-height:1.9;
+        font-size:15px;
+    ">
+
+            Explore behavioral analysis,
+            machine learning detection,
+            and AI-driven threat intelligence.
+
+        </p>
+
+        <div style="
+        display:grid;
+        grid-template-columns:1fr;
+        gap:16px;
+        margin-top:28px;
+    ">
+
+            <div style="
+            background:rgba(255,255,255,0.03);
+            border-radius:18px;
+            padding:16px;
+        ">
+
+                <span style="
+                color:#8B98AE;
+                font-size:11px;
+                letter-spacing:1px;
+            ">
+
+                    DURATION
+
+                </span>
+
+                <h4 style="
+                color:#4D7CFE;
+                margin-top:10px;
+            ">
+
+                    70 Minutes
+
+                </h4>
+
+            </div>
+
+        </div>
+
+        <div style="margin-top:28px;">
+
+            <div style="
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:10px;
+        ">
+
+                <span style="
+                color:#A8B3C7;
+                font-size:13px;
+            ">
+                    Training Progress
+                </span>
+
+                <span style="
+                color:#F4C56A;
+                font-size:13px;
+                font-weight:600;
+            ">
+
+                    {% if 4 in session.get('completed_modules', []) %}
+                    100%
+                    {% else %}
+                    0%
+                    {% endif %}
+
+                </span>
+
+            </div>
+
+            <div style="
+            width:100%;
+            height:10px;
+            background:#0B1325;
+            border-radius:30px;
+            overflow:hidden;
+        ">
+
+                <div style="
+                height:100%;
+                background:linear-gradient(
+                    90deg,
+                    #D4A64F,
+                    #F4C56A
+                );
+
+                width:
+                {% if 4 in session.get('completed_modules', []) %}
+                100%
+                {% else %}
+                8%
+                {% endif %};
+            "></div>
+
+            </div>
+
+        </div>
+
+        {% if 3 in session.get('completed_modules', []) %}
+
+        <a href="/module/4/chapter/1">
+
+            <button style="
+            margin-top:32px;
+            width:100%;
+            background:linear-gradient(
+                135deg,
+                #D4A64F,
+                #C99732
+            );
+
+            border:none;
+
+            color:#020817;
+
+            padding:16px;
+
+            border-radius:16px;
+
+            font-size:15px;
+            font-weight:700;
+
+            cursor:pointer;
+        ">
+
+                {% if 4 in session.get('completed_modules', []) %}
+                ✓ Intelligence Reviewed
+                {% else %}
+                Begin Training →
+                {% endif %}
+
+            </button>
+
+        </a>
+
+        {% else %}
+
+        <button disabled style="
+        margin-top:32px;
+        width:100%;
+        background:#0B1325;
+        border:1px solid rgba(255,255,255,0.08);
+        color:#8B98AE;
+        padding:16px;
+        border-radius:16px;
+        font-size:15px;
+        font-weight:700;
+        opacity:0.6;
+        cursor:not-allowed;
+    ">
+
+            🔒 Locked
+
+        </button>
+
+        {% endif %}
+
+    </div>
+    {% endblock %}

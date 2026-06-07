@@ -1,0 +1,667 @@
+{% extends "base.html" %}
+
+{% block title %}
+Threat Simulator | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<div class="dashboard-header">
+
+    <span class="threat-badge critical">
+
+        CYBER THREAT SIMULATION SYSTEM
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Threat Simulator
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:18px;
+    ">
+
+        Simulate phishing scenarios,
+        evaluate cybersecurity awareness,
+        and understand enterprise threat behavior
+        through Mailora simulation environments.
+
+    </p>
+
+</div>
+
+<!-- =========================================
+     SUMMARY CARDS
+========================================= -->
+
+<div class="cards">
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon red">
+
+            <i class="fa-solid fa-bug"></i>
+
+        </div>
+
+        <h3>
+
+            Active Simulations
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            06
+
+        </h1>
+
+        <span>
+
+            Cybersecurity threat
+            scenarios currently available.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon orange">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </div>
+
+        <h3>
+
+            Phishing Scenarios
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            18
+
+        </h1>
+
+        <span>
+
+            Email-based phishing
+            attack simulations prepared.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon blue">
+
+            <i class="fa-solid fa-brain"></i>
+
+        </div>
+
+        <h3>
+
+            AI Intelligence
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            ACTIVE
+
+        </h1>
+
+        <span>
+
+            Threat behavior
+            monitoring operational.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon green">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <h3>
+
+            Awareness Level
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            HIGH
+
+        </h1>
+
+        <span>
+
+            Enterprise cybersecurity
+            awareness maintained securely.
+
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     SIMULATION GRID
+========================================= -->
+
+<div class="result-box">
+
+    <!-- HEADER -->
+
+    <div class="table-header">
+
+        <h2>
+
+            Simulation Scenarios
+
+        </h2>
+
+        <span class="threat-badge high">
+
+            TRAINING ACTIVE
+
+        </span>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="academy-card" style="
+    grid-column:1/-1;
+    padding:32px;
+">
+
+        <form method="POST">
+
+            <h2 style="
+            color:white;
+            margin-bottom:28px;
+        ">
+                Generate Threat Scenario
+            </h2>
+
+            <!-- THREAT CATEGORY -->
+
+            <div style="margin-bottom:22px;">
+
+                <label style="
+            color:#F4C56A;
+            font-size:13px;
+            display:block;
+            margin-bottom:10px;
+        ">
+                    Threat Category
+                </label>
+
+                <select name="threat_category" style="
+                width:100%;
+                padding:14px;
+                border-radius:14px;
+                background:#0B1325;
+                border:1px solid rgba(255,255,255,0.08);
+                color:white;
+            ">
+
+                    <option>Credential Phishing</option>
+                    <option>Banking Fraud</option>
+                    <option>Social Engineering</option>
+                    <option>Business Email Compromise</option>
+                    <option>Crypto Scam</option>
+                    <option>Malware Delivery</option>
+                    <option>Executive Impersonation</option>
+                    <option>Cloud Service Spoofing</option>
+                    <option>Fake Invoice Scam</option>
+                    <option>Payment Redirection Fraud</option>
+
+                </select>
+
+            </div>
+
+            <!-- SIMULATION FORMAT -->
+
+            <div style="margin-bottom:22px;">
+
+                <label style="
+            color:#F4C56A;
+            font-size:13px;
+            display:block;
+            margin-bottom:10px;
+        ">
+                    Simulation Format
+                </label>
+
+                <select name="simulation_format" style="
+            width:100%;
+            padding:14px;
+            border-radius:14px;
+            background:#0B1325;
+            border:1px solid rgba(255,255,255,0.08);
+            color:white;
+        ">
+
+                    <option>Email / Message Content</option>
+                    <option>Email / Message Content + Link</option>
+                    <option>Link Only</option>
+
+                </select>
+
+            </div>
+
+            <!-- RISK LEVEL -->
+
+            <div style="margin-bottom:28px;">
+
+                <label style="
+            color:#F4C56A;
+            font-size:13px;
+            display:block;
+            margin-bottom:10px;
+        ">
+                    Risk Level
+                </label>
+
+                <select name="risk_level" style="
+            width:100%;
+            padding:14px;
+            border-radius:14px;
+            background:#0B1325;
+            border:1px solid rgba(255,255,255,0.08);
+            color:white;
+        ">
+                    <option>Safe</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Critical</option>
+
+                </select>
+
+            </div>
+
+            <button style="
+        width:100%;
+        padding:16px;
+
+        background:linear-gradient(
+            135deg,
+            #D4A64F,
+            #C99732
+        );
+
+        border:none;
+        border-radius:14px;
+
+        color:#020817;
+        font-weight:700;
+        cursor:pointer;
+    ">
+
+                Generate Scenario
+
+            </button>
+            <!-- GENERATED SCENARIO -->
+
+            <div style="
+    margin-top:30px;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(212,166,79,0.10);
+
+    border-radius:18px;
+
+    padding:24px;
+">
+
+                <h3 style="
+        color:#F4C56A;
+        margin-bottom:18px;
+    ">
+                    Generated Scenario
+                </h3>
+
+                <div style="
+                    color:#A8B3C7;
+                    line-height:2;
+                    font-size:15px;
+                ">
+
+                    {% if scenario %}
+
+                    {% if scenario %}
+
+                    <div style="
+    background:#0B1325;
+    border:1px solid rgba(212,166,79,0.12);
+    border-radius:16px;
+    padding:20px;
+    margin-top:12px;
+">
+
+                        <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:14px;
+    ">
+
+                            <span style="
+            color:#F4C56A;
+            font-size:13px;
+            font-weight:600;
+            letter-spacing:1px;
+        ">
+                                SIMULATED THREAT CONTENT
+                            </span>
+
+                            <button onclick="copyScenario()" style="
+                background:rgba(212,166,79,0.12);
+                border:none;
+                color:#F4C56A;
+                padding:8px 14px;
+                border-radius:10px;
+                cursor:pointer;
+                font-size:12px;
+                font-weight:600;
+            ">
+                                {% if metadata %}
+
+                                <div style="
+                    display:flex;
+                    gap:12px;
+                    flex-wrap:wrap;
+                    margin-bottom:18px;
+                ">
+
+                                    <span class="threat-badge critical">
+                                        {{ metadata.threat_category }}
+                                    </span>
+
+                                    <span class="threat-badge high">
+                                        {{ metadata.simulation_format }}
+                                    </span>
+
+                                    <span class="threat-badge safe">
+                                        {{ metadata.risk_level }}
+                                    </span>
+
+                                </div>
+
+                                {% endif %}
+                                Copy Content
+                            </button>
+
+                        </div>
+
+                        <pre id="scenarioContent" style="
+        color:#A8B3C7;
+        white-space:pre-wrap;
+        font-family:inherit;
+        margin:0;
+        line-height:1.9;
+    ">{{ scenario }}</pre>
+
+                    </div>
+
+                    <script>
+                        function copyScenario() {
+
+                            const content =
+                                document.getElementById("scenarioContent").innerText;
+
+                            navigator.clipboard.writeText(content);
+
+                        }
+                    </script>
+
+                    {% else %}
+
+                    Scenario will appear here...
+
+                    {% endif %}
+
+                    {% else %}
+
+                    Scenario will appear here...
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- =========================================
+     LOWER GRID
+========================================= -->
+
+    <div class="dashboard-grid" style="margin-top:24px;">
+
+        <!-- =========================================
+         SIMULATION ACTIVITY
+    ========================================== -->
+
+        <div class="recommendation">
+
+            <div class="table-header">
+
+                <h2>
+
+                    Simulation Activity
+
+                </h2>
+
+                <span class="threat-badge high">
+
+                    UPDATED
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Banking phishing simulation initialized
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Suspicious redirect behavior detected
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    AI threat analysis synchronized
+
+                </span>
+
+            </div>
+
+            <div class="status-item" style="border-bottom:none;">
+
+                <span>
+
+                    Enterprise awareness training completed
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+         SIMULATION TIMELINE
+    ========================================== -->
+
+        <div class="recommendation">
+
+            <div class="table-header">
+
+                <h2>
+
+                    Simulation Workflow
+
+                </h2>
+
+                <span class="threat-badge safe">
+
+                    OPERATIONAL
+
+                </span>
+
+            </div>
+
+            <!-- TIMELINE -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div>
+
+                    <h4>
+
+                        Simulation Selected
+
+                    </h4>
+
+                    <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                        Threat scenario initialized securely.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div>
+
+                    <h4>
+
+                        Phishing Environment Generated
+
+                    </h4>
+
+                    <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                        Cyber attack behavior simulated.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div>
+
+                    <h4>
+
+                        Threat Intelligence Evaluation
+
+                    </h4>
+
+                    <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                        AI engine classified simulation activity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div>
+
+                    <h4>
+
+                        Awareness Assessment Completed
+
+                    </h4>
+
+                    <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                        Final cybersecurity evaluation generated.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,513 @@
+{% extends "base.html" %}
+
+{% block title %}
+Threat Analyzer | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<div class="dashboard-header">
+
+    <span class="threat-badge high">
+
+        PHISHING INVESTIGATION SYSTEM
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Threat Analyzer
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:18px;
+    ">
+
+        Investigate suspicious phishing emails,
+        analyze malicious links,
+        evaluate cyber threats,
+        and generate enterprise intelligence findings
+        through Mailora cybersecurity workflows.
+
+    </p>
+
+</div>
+
+<!-- =========================================
+     MAIN GRID
+========================================= -->
+
+<div class="dashboard-grid">
+
+    <!-- =========================================
+         LEFT PANEL
+    ========================================== -->
+
+    <div class="result-box">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Threat Investigation
+
+            </h2>
+
+            <span class="threat-badge safe">
+
+                READY
+
+            </span>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form action="/analyze" method="POST">
+
+            <!-- EMAIL CONTENT -->
+
+            <div class="enterprise-input-group">
+
+                <label>
+
+                    EMAIL / MESSAGE CONTENT
+
+                </label>
+
+                <textarea name="email_content" placeholder="Paste suspicious phishing email or message content here..."
+                    required></textarea>
+
+            </div>
+
+            <!-- OPTIONAL LINK -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    SUSPICIOUS LINK (OPTIONAL)
+
+                </label>
+
+                <input type="text" name="url" placeholder="https://suspicious-domain-example.com">
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="action-buttons">
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Analyze Threat
+
+                </button>
+
+                <button type="reset" class="secondary-btn">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- =========================================
+         RIGHT PANEL
+    ========================================== -->
+
+    <div class="live-status">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Status
+
+            </h2>
+
+            <span class="status-pill">
+
+                ACTIVE
+
+            </span>
+
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="status-item">
+
+            <span>
+
+                AI Threat Engine
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                ONLINE
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                URL Intelligence Scanner
+
+            </span>
+
+            <span class="threat-badge high">
+
+                RUNNING
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Phishing Detection Layer
+
+            </span>
+
+            <span class="threat-badge suspicious">
+
+                ACTIVE
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Enterprise Monitoring
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                SECURE
+
+            </span>
+
+        </div>
+
+        <!-- =========================================
+             QUICK TIPS
+        ========================================== -->
+
+        <div class="recommendation" style="
+                margin-top:28px;
+                padding:24px;
+            ">
+
+            <div class="table-header" style="margin-bottom:20px;">
+
+                <h2 style="font-size:20px;">
+
+                    Investigation Tips
+
+                </h2>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Verify suspicious domains carefully
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Avoid clicking unknown links
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Analyze urgency-based language
+
+                </span>
+
+            </div>
+
+            <div class="status-item" style="border-bottom:none;">
+
+                <span>
+
+                    Monitor spoofed login requests
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     LOWER GRID
+========================================= -->
+
+<div class="dashboard-grid" style="margin-top:24px;">
+
+    <!-- =========================================
+         RECENT THREATS
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Recent Threat Activity
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                UPDATED
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Banking Login Phishing
+
+            </span>
+
+            <span class="threat-badge critical">
+
+                HIGH
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Microsoft 365 Spoofing
+
+            </span>
+
+            <span class="threat-badge suspicious">
+
+                MEDIUM
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Crypto Wallet Scam
+
+            </span>
+
+            <span class="threat-badge critical">
+
+                CRITICAL
+
+            </span>
+
+        </div>
+
+        <div class="status-item" style="border-bottom:none;">
+
+            <span>
+
+                Payroll Verification Fraud
+
+            </span>
+
+            <span class="threat-badge high">
+
+                WARNING
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         WORKFLOW
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Workflow
+
+            </h2>
+
+            <span class="threat-badge safe">
+
+                PROCESS
+
+            </span>
+
+        </div>
+
+        <!-- TIMELINE -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Threat Submitted
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Suspicious email entered into Mailora.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    AI Threat Analysis
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Behavioral phishing patterns analyzed.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    URL Intelligence Review
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Suspicious domains evaluated securely.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Final Classification
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Threat severity generated automatically.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

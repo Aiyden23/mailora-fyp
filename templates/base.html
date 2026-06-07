@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================
+         META
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         TITLE
+    ========================================== -->
+
+    <title>
+
+        {% block title %}
+        Mailora
+        {% endblock %}
+
+    </title>
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- =========================================
+         FONT AWESOME
+    ========================================== -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- =========================================
+             BRAND
+        ========================================== -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+
+                    MAILORA
+
+                </h2>
+
+                <p>
+
+                    Executive Intelligence Suite
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================== -->
+
+        <nav>
+
+            <a href="/dashboard">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="/home">
+
+                <i class="fa-solid fa-shield-virus"></i>
+
+                Threat Analyzer
+
+            </a>
+
+            <a href="/history">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Investigations
+
+            </a>
+
+            <a href="/academy">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Cyber Academy
+
+            </a>
+
+            <a href="/simulator">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threat Simulator
+
+            </a>
+
+            <a href="/account">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                Account Center
+
+            </a>
+
+            <a href="/help">
+
+                <i class="fa-solid fa-headset"></i>
+
+                Help Center
+
+            </a>
+
+            <a href="/about">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                About Platform
+
+            </a>
+
+            <a href="/logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+        <!-- =========================================
+             TOPBAR
+        ========================================== -->
+
+        <header class="topbar">
+
+            <!-- LEFT -->
+
+            <div class="topbar-left">
+
+                <!-- HAMBURGER -->
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <!-- LOGO -->
+
+                <div class="logo-mini">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div class="logo-title">
+
+                    MAILORA
+
+                </div>
+
+            </div>
+
+            <!-- SEARCH -->
+
+            <div class="search-bar">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Search investigations, threats, intelligence...">
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="topbar-right">
+
+                <div class="top-icon">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+                <div class="top-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </div>
+
+                <div class="status-pill">
+
+                    SYSTEM ACTIVE
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =========================================
+             PAGE CONTENT
+        ========================================== -->
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- =========================================
+         SIDEBAR SCRIPT
+    ========================================== -->
+
+    <script>
+
+        const sidebar =
+            document.getElementById(
+                "sidebar"
+            );
+
+        const menuToggle =
+            document.getElementById(
+                "menuToggle"
+            );
+
+        const sidebarOverlay =
+            document.getElementById(
+                "sidebarOverlay"
+            );
+
+        // OPEN SIDEBAR
+
+        menuToggle.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.toggle(
+                    "active"
+                );
+
+                sidebarOverlay.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+        // CLOSE SIDEBAR
+
+        sidebarOverlay.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.remove(
+                    "active"
+                );
+
+                sidebarOverlay.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+        // CLOSE WHEN CLICK NAVIGATION
+
+        document.querySelectorAll(
+            ".sidebar nav a"
+        ).forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    sidebar.classList.remove(
+                        "active"
+                    );
+
+                    sidebarOverlay.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>

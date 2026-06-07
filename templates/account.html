@@ -1,0 +1,742 @@
+{% extends "base.html" %}
+
+{% block title %}
+Account Center | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<div class="dashboard-header">
+
+    <span class="threat-badge safe">
+
+        ENTERPRISE ACCOUNT MANAGEMENT
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Account Center
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:18px;
+    ">
+
+        Manage your Mailora profile,
+        monitor account security,
+        review operational activity,
+        and maintain enterprise cybersecurity access
+        through the Mailora account system.
+
+    </p>
+
+</div>
+
+<!-- =========================================
+     SUMMARY CARDS
+========================================= -->
+
+<div class="cards">
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon blue">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+        </div>
+
+        <h3>
+
+            Account Status
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            ACTIVE
+
+        </h1>
+
+        <span>
+
+            Enterprise intelligence
+            identity verified successfully.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon green">
+
+            <i class="fa-solid fa-lock"></i>
+
+        </div>
+
+        <h3>
+
+            Security Level
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            HIGH
+
+        </h1>
+
+        <span>
+
+            Account protection
+            and secure authentication enabled.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon orange">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+        </div>
+
+        <h3>
+
+            Investigations
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            24
+
+        </h1>
+
+        <span>
+
+            Threat investigations
+            completed within Mailora.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon red">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <h3>
+
+            AI Protection
+
+        </h3>
+
+        <h1 style="font-size:48px;">
+
+            ON
+
+        </h1>
+
+        <span>
+
+            Threat intelligence
+            monitoring operational.
+
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     MAIN GRID
+========================================= -->
+
+<div class="dashboard-grid">
+
+    <!-- =========================================
+         PROFILE PANEL
+    ========================================== -->
+
+    <div class="result-box">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Profile Information
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                VERIFIED
+
+            </span>
+
+        </div>
+
+        <!-- PROFILE -->
+
+        <div style="
+            display:flex;
+            align-items:center;
+            gap:24px;
+            margin-bottom:34px;
+            flex-wrap:wrap;
+        ">
+
+            <!-- AVATAR -->
+
+            <div style="
+                width:110px;
+                height:110px;
+                border-radius:24px;
+                background:rgba(214,161,95,0.12);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:42px;
+                color:#D6A15F;
+            ">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <!-- INFO -->
+
+            <div>
+
+                <h2 style="
+                    font-size:34px;
+                    margin-bottom:10px;
+                ">
+
+                    {{ user["fullname"] }}
+
+                </h2>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-bottom:8px;
+                ">
+
+                    Cyber Intelligence Analyst
+
+                </p>
+
+                <span class="threat-badge safe">
+
+                    ACTIVE ACCOUNT
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form>
+
+            <!-- USERNAME -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    USERNAME
+                    <i class="fa-solid fa-lock" style="
+                        color:#8B98AE;
+                        margin-left:6px;
+                    "></i>
+
+                </label>
+
+                <input type="text" value="{{ user['username'] }}" readonly style="
+                    color:#8B98AE;
+                    background:rgba(255,255,255,0.03);
+                    cursor:not-allowed;
+                ">
+
+                <small style="
+                    color:#8B98AE;
+                    display:block;
+                    margin-top:8px;
+                ">
+
+                    Username cannot be modified after account creation.
+
+                </small>
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    EMAIL ADDRESS
+
+                </label>
+
+                <input type="text" value="{{ user['contact'] }}" readonly>
+
+            </div>
+
+            <!-- ROLE -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    ACCESS ROLE
+
+                </label>
+
+                <input type="text" value="Cyber Intelligence Analyst" readonly>
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="action-buttons">
+
+                <a href="/update-profile" style="text-decoration:none;">
+
+                    <a href="/update-profile" style="text-decoration:none;">
+
+                        <button type="button">
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            Update Profile
+
+                        </button>
+
+                    </a>
+
+                </a>
+
+                <a href="/change-password" style="text-decoration:none;">
+
+                    <button type="button" class="secondary-btn">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Change Password
+
+                    </button>
+
+                </a>
+                <a href="/delete-account" style="text-decoration:none;">
+
+                    <button type="button" style="
+                        background:#8B1E1E;
+                        color:white;
+                        border:none;
+                        padding:12px 18px;
+                        border-radius:12px;
+                        cursor:pointer;
+                        font-weight:600;
+                    ">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete Account
+
+                    </button>
+
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- =========================================
+         RIGHT PANEL
+    ========================================== -->
+
+    <div class="live-status">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Account Security
+
+            </h2>
+
+            <span class="status-pill">
+
+                SECURE
+
+            </span>
+
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="status-item">
+
+            <span>
+
+                Authentication Status
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                VERIFIED
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Password Encryption
+
+            </span>
+
+            <span class="threat-badge high">
+
+                ENABLED
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Threat Monitoring
+
+            </span>
+
+            <span class="threat-badge suspicious">
+
+                ACTIVE
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Session Protection
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                SECURE
+
+            </span>
+
+        </div>
+
+        <!-- =========================================
+             RECENT ACTIVITY
+        ========================================== -->
+
+        <div class="recommendation" style="
+                margin-top:28px;
+                padding:24px;
+            ">
+
+            <div class="table-header" style="margin-bottom:18px;">
+
+                <h2 style="font-size:20px;">
+
+                    Recent Activity
+
+                </h2>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Login session established
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Threat investigation completed
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    AI intelligence report generated
+
+                </span>
+
+            </div>
+
+            <div class="status-item" style="border-bottom:none;">
+
+                <span>
+
+                    Enterprise monitoring synchronized
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     LOWER GRID
+========================================= -->
+
+<div class="dashboard-grid" style="margin-top:24px;">
+
+    <!-- =========================================
+         ACCOUNT RECOMMENDATIONS
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Security Recommendations
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                ADVISORY
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Maintain strong password security
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Monitor suspicious login activity
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Review investigation history regularly
+
+            </span>
+
+        </div>
+
+        <div class="status-item" style="border-bottom:none;">
+
+            <span>
+
+                Keep enterprise access credentials protected
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         ACCOUNT TIMELINE
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Account Timeline
+
+            </h2>
+
+            <span class="threat-badge safe">
+
+                OPERATIONAL
+
+            </span>
+
+        </div>
+
+        <!-- TIMELINE -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Account Registered
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Mailora enterprise identity created.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Security Verification Completed
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Authentication systems activated.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Threat Monitoring Enabled
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Enterprise intelligence tracking started.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Investigation Workflow Active
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Cybersecurity operations initialized.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

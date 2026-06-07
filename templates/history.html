@@ -1,0 +1,627 @@
+{% extends "base.html" %}
+
+{% block title %}
+Investigation History | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<div class="dashboard-header">
+
+    <span class="threat-badge high">
+
+        INVESTIGATION RECORD SYSTEM
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Investigation History
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:18px;
+    ">
+
+        View archived phishing investigations,
+        monitor intelligence activity,
+        manage threat records,
+        and maintain operational cybersecurity history
+        through Mailora investigation management.
+
+    </p>
+
+</div>
+
+<!-- =========================================
+     SUMMARY CARDS
+========================================= -->
+
+<div class="cards">
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon orange">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+        </div>
+
+        <h3>
+
+            Total Cases
+
+        </h3>
+
+        <h1 style="font-size:52px;">
+
+            {{ cases|length }}
+
+        </h1>
+
+        <span>
+
+            Stored phishing investigations
+            archived securely.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon red">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+        <h3>
+
+            High Risk Threats
+
+        </h3>
+
+        <h1 style="font-size:52px;">
+
+            18
+
+        </h1>
+
+        <span>
+
+            Critical phishing activities
+            identified by intelligence engine.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon blue">
+
+            <i class="fa-solid fa-link"></i>
+
+        </div>
+
+        <h3>
+
+            Suspicious URLs
+
+        </h3>
+
+        <h1 style="font-size:52px;">
+
+            63
+
+        </h1>
+
+        <span>
+
+            Malicious domains
+            flagged during investigations.
+
+        </span>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card">
+
+        <div class="card-icon green">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <h3>
+
+            Protected Records
+
+        </h3>
+
+        <h1 style="font-size:52px;">
+
+            100%
+
+        </h1>
+
+        <span>
+
+            Secure investigation
+            storage and monitoring.
+
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     HISTORY TABLE
+========================================= -->
+
+<div class="result-box">
+
+    <!-- HEADER -->
+
+    <div class="table-header">
+
+        <h2>
+
+            Investigation Records
+
+        </h2>
+
+        <span class="threat-badge safe">
+
+            LIVE DATABASE
+
+        </span>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div style="
+        overflow-x:auto;
+    ">
+
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+        ">
+
+            <!-- HEAD -->
+
+            <thead>
+
+                <tr style="
+                    border-bottom:1px solid rgba(255,255,255,0.06);
+                ">
+
+                    <th style="
+                        text-align:left;
+                        padding:18px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        SUBJECT
+
+                    </th>
+
+                    <th style="
+                        text-align:left;
+                        padding:18px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        URL
+
+                    </th>
+
+                    <th style="
+                        text-align:left;
+                        padding:18px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        DATE
+
+                    </th>
+
+                    <th style="
+                        text-align:left;
+                        padding:18px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        STATUS
+
+                    </th>
+
+                    <th style="
+                        text-align:left;
+                        padding:18px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        ACTIONS
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <!-- BODY -->
+
+            <tbody>
+
+                {% for case in cases %}
+
+                <tr style="
+                    border-bottom:1px solid rgba(255,255,255,0.04);
+                ">
+
+                    <!-- SUBJECT -->
+
+                    <td style="
+                        padding:20px 14px;
+                        font-size:15px;
+                    ">
+
+                        {{ case.email_content[:60] }}...
+
+                    </td>
+
+                    <!-- URL -->
+
+                    <td style="
+                        padding:20px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        {{ case.url }}
+
+                    </td>
+
+                    <!-- DATE -->
+
+                    <td style="
+                        padding:20px 14px;
+                        color:#9BA6B7;
+                        font-size:14px;
+                    ">
+
+                        {{ case.created_at }}
+
+                    </td>
+
+                    <!-- STATUS -->
+
+                    <td style="
+                        padding:20px 14px;
+                    ">
+
+                        <span class="threat-badge high">
+
+                            {{ case.result }}
+
+                        </span>
+
+                    </td>
+
+                    <!-- ACTIONS -->
+
+                    <td style="
+                        padding:20px 14px;
+                    ">
+
+                        <div style="
+                            display:flex;
+                            gap:10px;
+                            flex-wrap:wrap;
+                        ">
+
+                            <!-- VIEW -->
+
+                            <a href="/result/{{ case.id }}">
+
+                                <button style="
+                                    padding:10px 16px;
+                                    border-radius:12px;
+                                    background:#D6A15F;
+                                    color:#111;
+                                    font-weight:700;
+                                    font-size:13px;
+                                ">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                    View
+
+                                </button>
+
+                            </a>
+
+                            <!-- EDIT -->
+
+                            <a href="/edit_case/{{ case.id }}">
+
+                                <button class="secondary-btn" style="
+                                        padding:10px 16px;
+                                        border-radius:12px;
+                                        font-size:13px;
+                                    ">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                    Edit
+
+                                </button>
+
+                            </a>
+
+                            <!-- DELETE -->
+
+                            <a href="/delete_case/{{ case.id }}" onclick="return confirm('Delete this investigation?')">
+
+                                <button style="
+                                    padding:10px 16px;
+                                    border-radius:12px;
+                                    background:rgba(209,107,107,0.14);
+                                    color:#D16B6B;
+                                    border:1px solid rgba(209,107,107,0.15);
+                                    font-size:13px;
+                                    font-weight:700;
+                                ">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                    Delete
+
+                                </button>
+
+                            </a>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     LOWER GRID
+========================================= -->
+
+<div class="dashboard-grid" style="margin-top:24px;">
+
+    <!-- =========================================
+         RECENT ACTIVITY
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Recent Activity
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                UPDATED
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Banking phishing investigation archived
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Suspicious domain added to monitoring
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                AI threat classification completed
+
+            </span>
+
+        </div>
+
+        <div class="status-item" style="border-bottom:none;">
+
+            <span>
+
+                Intelligence report exported securely
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         WORKFLOW TIMELINE
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Workflow
+
+            </h2>
+
+            <span class="threat-badge safe">
+
+                PROCESS
+
+            </span>
+
+        </div>
+
+        <!-- TIMELINE -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Threat Submitted
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Suspicious phishing activity entered.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    AI Threat Analysis
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Threat severity evaluated automatically.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Intelligence Report Generated
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Operational report finalized.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Investigation Archived
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Threat securely stored in database.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

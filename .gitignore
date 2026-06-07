@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+database.db
+datasets/phishing_email.csv

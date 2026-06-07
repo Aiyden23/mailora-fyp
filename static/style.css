@@ -1,0 +1,1263 @@
+/* =========================================================
+   MAILORA — FINAL ENTERPRISE MASTER STYLE
+   LUXURY INTELLIGENCE DARK UI
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --bg-main: #040816;
+    --bg-secondary: #09111f;
+    --bg-card: rgba(10, 18, 35, 0.88);
+
+    --border: rgba(255, 255, 255, 0.06);
+
+    --text-primary: #F5F7FA;
+    --text-secondary: #9BA6B7;
+    --text-muted: #6B7280;
+
+    --gold: #D6A15F;
+    --gold-light: #E8BC78;
+
+    --green: #7FB685;
+    --red: #D16B6B;
+    --blue: #8FA7C7;
+    --orange: #D6A15F;
+
+    --sidebar-width: 300px;
+
+    --shadow:
+        0 10px 40px rgba(0, 0, 0, 0.45);
+
+    --transition:
+        all 0.25s ease;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(214, 161, 95, 0.08),
+            transparent 28%),
+        linear-gradient(to bottom,
+            #030712,
+            #050B18);
+
+    color: var(--text-primary);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+
+    background-size: 80px 80px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: -320px;
+
+    width: var(--sidebar-width);
+
+    height: 100vh;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(4, 8, 22, 0.98),
+            rgba(6, 12, 25, 0.98));
+
+    backdrop-filter: blur(20px);
+
+    border-right:
+        1px solid var(--border);
+
+    z-index: 2000;
+
+    transition: var(--transition);
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 28px;
+}
+
+.sidebar.active {
+
+    left: 0;
+}
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 1500;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: var(--transition);
+}
+
+.sidebar-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+
+    width: 54px;
+    height: 54px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(214, 161, 95, 0.25),
+            rgba(214, 161, 95, 0.08));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--gold);
+
+    font-size: 20px;
+}
+
+.brand-text h2 {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.brand-text p {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.sidebar nav a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 18px;
+
+    border-radius: 16px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    transition: var(--transition);
+}
+
+.sidebar nav a:hover {
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: white;
+}
+
+.sidebar nav a.active {
+
+    background:
+        linear-gradient(90deg,
+            rgba(214, 161, 95, 0.18),
+            rgba(214, 161, 95, 0.06));
+
+    color: white;
+
+    border:
+        1px solid rgba(214, 161, 95, 0.15);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 28px;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background:
+        rgba(5, 10, 20, 0.92);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 20px 26px;
+
+    margin-bottom: 28px;
+
+    backdrop-filter: blur(18px);
+
+    position: sticky;
+
+    top: 20px;
+
+    z-index: 1000;
+}
+
+/* =========================================================
+   TOPBAR LEFT
+========================================================= */
+
+.topbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-toggle {
+
+    width: 56px;
+    height: 56px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    color: white;
+
+    font-size: 18px;
+}
+
+.menu-toggle:hover {
+
+    border-color:
+        rgba(214, 161, 95, 0.25);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   LOGO MINI
+========================================================= */
+
+.logo-mini {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(214, 161, 95, 0.28),
+            rgba(214, 161, 95, 0.08));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--gold);
+}
+
+.logo-title {
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.search-bar {
+
+    width: 420px;
+
+    position: relative;
+}
+
+.search-bar input {
+
+    width: 100%;
+
+    height: 56px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding-left: 52px;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.search-bar i {
+
+    position: absolute;
+
+    left: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--text-secondary);
+}
+
+/* =========================================================
+   TOPBAR RIGHT
+========================================================= */
+
+.topbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.top-icon {
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.top-icon:hover {
+
+    transform: translateY(-2px);
+}
+
+.status-pill {
+
+    padding: 16px 24px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(127, 182, 133, 0.12);
+
+    color: var(--green);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.dashboard-header {
+
+    background:
+        linear-gradient(135deg,
+            rgba(8, 15, 30, 0.98),
+            rgba(3, 8, 20, 0.96));
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 36px;
+
+    padding: 46px;
+
+    margin-bottom: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.dashboard-header::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -120px;
+    right: -120px;
+
+    width: 320px;
+    height: 320px;
+
+    background:
+        radial-gradient(circle,
+            rgba(214, 161, 95, 0.14),
+            transparent 70%);
+}
+
+.dashboard-header h1 {
+
+    font-size: 72px;
+
+    line-height: 1;
+
+    max-width: 1000px;
+
+    margin-top: 28px;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+}
+
+.dashboard-header p {
+
+    margin-top: 28px;
+
+    max-width: 950px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.9;
+
+    font-size: 24px;
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.threat-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.threat-badge.high {
+
+    background:
+        rgba(214, 161, 95, 0.14);
+
+    color: var(--gold);
+}
+
+.threat-badge.safe {
+
+    background:
+        rgba(127, 182, 133, 0.14);
+
+    color: var(--green);
+}
+
+.threat-badge.suspicious {
+
+    background:
+        rgba(143, 167, 199, 0.14);
+
+    color: var(--blue);
+}
+
+.threat-badge.critical {
+
+    background:
+        rgba(209, 107, 107, 0.14);
+
+    color: var(--red);
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+
+    margin-bottom: 28px;
+}
+
+.card {
+
+    background:
+        var(--bg-card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    backdrop-filter: blur(18px);
+
+    min-height: 260px;
+}
+
+.card-icon {
+
+    width: 74px;
+    height: 74px;
+
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    font-size: 22px;
+}
+
+.card-icon.blue {
+    background: rgba(143, 167, 199, 0.16);
+    color: var(--blue);
+}
+
+.card-icon.green {
+    background: rgba(127, 182, 133, 0.16);
+    color: var(--green);
+}
+
+.card-icon.orange {
+    background: rgba(214, 161, 95, 0.16);
+    color: var(--gold);
+}
+
+.card-icon.red {
+    background: rgba(209, 107, 107, 0.16);
+    color: var(--red);
+}
+
+.card h3 {
+
+    color: var(--text-secondary);
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+.card h1 {
+
+    font-size: 72px;
+
+    margin-bottom: 20px;
+
+    font-weight: 900;
+}
+
+.card span {
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+    align-items: stretch;
+
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.result-box,
+.live-status,
+.recommendation {
+
+    background:
+        var(--bg-card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    padding: 34px;
+
+    backdrop-filter: blur(18px);
+}
+
+.dashboard-grid {
+
+    align-items: stretch;
+
+}
+
+.live-status,
+.recommendation {
+
+    min-height: 700px;
+
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.table-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.table-header h2 {
+
+    font-size: 26px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   STATUS ITEM
+========================================================= */
+
+.status-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.04);
+
+    color: var(--text-secondary);
+
+    font-size: 18px;
+}
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.enterprise-input-group {
+
+    width: 100%;
+}
+
+.enterprise-input-group label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.enterprise-input-group input,
+.enterprise-input-group textarea {
+
+    width: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 18px 20px;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.enterprise-input-group textarea {
+
+    min-height: 160px;
+
+    resize: none;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.action-buttons {
+
+    display: flex;
+
+    gap: 18px;
+
+    margin-top: 26px;
+}
+
+.action-buttons button,
+.simulation-actions button,
+.academy-footer button {
+
+    background:
+        linear-gradient(135deg,
+            var(--gold-light),
+            var(--gold));
+
+    color: #111;
+
+    padding: 16px 24px;
+
+    border-radius: 18px;
+
+    font-weight: 700;
+
+    font-size: 15px;
+}
+
+.secondary-btn {
+
+    background:
+        rgba(255, 255, 255, 0.05) !important;
+
+    color: white !important;
+
+    border:
+        1px solid var(--border);
+}
+
+/* =========================================================
+   LOGIN / REGISTER
+========================================================= */
+
+.premium-login-wrapper {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px;
+}
+
+.premium-login-container {
+
+    width: 100%;
+
+    max-width: 1700px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 560px;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.premium-branding h1 {
+
+    font-size: 120px;
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+
+    margin-top: 30px;
+}
+
+.premium-tagline {
+
+    font-size: 32px;
+
+    letter-spacing: 8px;
+
+    margin-top: 20px;
+
+    font-weight: 700;
+}
+
+.premium-description {
+
+    margin-top: 40px;
+
+    max-width: 900px;
+
+    color: var(--text-secondary);
+
+    font-size: 24px;
+
+    line-height: 1.9;
+}
+
+.premium-login-card {
+
+    background:
+        rgba(8, 15, 28, 0.95);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 40px;
+
+    padding: 50px;
+
+    backdrop-filter: blur(20px);
+}
+
+.premium-login-card h2 {
+
+    font-size: 68px;
+
+    line-height: 1;
+
+    margin-top: 24px;
+
+    font-weight: 900;
+}
+
+.premium-login-card p {
+
+    margin-top: 18px;
+
+    color: var(--text-secondary);
+
+    font-size: 22px;
+}
+
+.input-group {
+
+    margin-top: 28px;
+
+    position: relative;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.input-group input {
+
+    width: 100%;
+
+    height: 68px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    color: white;
+
+    padding: 0 20px;
+
+    font-size: 16px;
+}
+
+.toggle-password {
+
+    position: absolute;
+
+    right: 22px;
+    bottom: 25px;
+
+    color: var(--text-secondary);
+
+    cursor: pointer;
+}
+
+.premium-login-btn {
+
+    width: 100%;
+
+    height: 70px;
+
+    border-radius: 22px;
+
+    margin-top: 34px;
+
+    background:
+        linear-gradient(135deg,
+            var(--gold-light),
+            var(--gold));
+
+    color: #111;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   ACADEMY
+========================================================= */
+
+.academy-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.academy-card {
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.04);
+
+    border-radius: 24px;
+
+    padding: 26px;
+}
+
+.academy-card h3 {
+
+    margin-top: 20px;
+
+    font-size: 24px;
+}
+
+.academy-card p {
+
+    margin-top: 14px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+}
+
+.academy-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 24px;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline-item {
+
+    display: flex;
+
+    gap: 18px;
+
+    margin-bottom: 26px;
+}
+
+.timeline-dot {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    margin-top: 8px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1400px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .premium-login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 58px;
+    }
+}
+
+@media(max-width:900px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .dashboard-header {
+        padding: 30px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 46px;
+    }
+
+    .dashboard-header p {
+        font-size: 18px;
+    }
+
+    .premium-branding h1 {
+        font-size: 72px;
+    }
+
+    .premium-tagline {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+
+    .premium-description {
+        font-size: 18px;
+    }
+
+    .premium-login-card h2 {
+        font-size: 46px;
+    }
+}

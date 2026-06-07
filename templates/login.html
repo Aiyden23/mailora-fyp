@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Mailora Login
+
+    </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         LOGIN WRAPPER
+    ========================================== -->
+
+    <div class="premium-login-wrapper">
+
+        <!-- =========================================
+             LOGIN CARD
+        ========================================== -->
+
+        <div class="premium-login-card" style="
+                width:100%;
+                max-width:520px;
+                margin:auto;
+            ">
+
+            <!-- LOGO -->
+
+            <div style="
+                display:flex;
+                align-items:center;
+                gap:14px;
+                margin-bottom:30px;
+            ">
+
+                <div class="logo-mini">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 style="
+                        font-size:34px;
+                        font-weight:800;
+                        letter-spacing:-1px;
+                    ">
+
+                        MAILORA
+
+                    </h1>
+
+                    <p style="
+                        color:#9BA6B7;
+                        font-size:14px;
+                        margin-top:4px;
+                    ">
+
+                        Executive Cyber Intelligence
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- BADGE -->
+
+            <span class="threat-badge high">
+
+                SECURE LOGIN
+
+            </span>
+
+            <!-- TITLE -->
+
+            <h2 style="
+                font-size:42px;
+                margin-top:24px;
+                font-weight:800;
+            ">
+
+                Welcome Back
+
+            </h2>
+
+            <!-- SUBTITLE -->
+
+            <p style="
+                color:#9BA6B7;
+                margin-top:12px;
+                line-height:1.7;
+                font-size:16px;
+            ">
+
+                Access your Mailora intelligence workspace
+                and continue enterprise threat investigations.
+
+            </p>
+
+            <!-- ERROR -->
+
+            {% if error %}
+
+            <div style="
+                margin-top:24px;
+                padding:16px;
+                border-radius:16px;
+                background:rgba(209,107,107,0.12);
+                border:1px solid rgba(209,107,107,0.15);
+                color:#D16B6B;
+                font-size:14px;
+                font-weight:600;
+            ">
+
+                {{ error }}
+
+            </div>
+
+            {% endif %}
+
+            <!-- FORM -->
+
+            <form method="POST" style="margin-top:30px;">
+
+                <!-- USERNAME -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        USERNAME / EMAIL
+
+                    </label>
+
+                    <input type="text" name="login" placeholder="Enter username or email" required>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        PASSWORD
+
+                    </label>
+
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePassword()"></i>
+
+                </div>
+
+                <!-- REMEMBER -->
+
+                <div style="
+                    margin-top:20px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                    font-size:14px;
+                    color:#9BA6B7;
+                ">
+
+                    <label style="
+                        display:flex;
+                        align-items:center;
+                        gap:10px;
+                        cursor:pointer;
+                    ">
+
+                        <input type="checkbox">
+
+                        Remember me
+
+                    </label>
+
+                    <a href="#" style="color:#D6A15F;">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button type="submit" class="premium-login-btn">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login to Mailora
+
+                </button>
+
+            </form>
+
+            <!-- FOOTER -->
+
+            <div style="
+                margin-top:30px;
+                text-align:center;
+                color:#9BA6B7;
+                font-size:14px;
+            ">
+
+                Don’t have an account?
+
+                <a href="/register" style="
+                        color:#D6A15F;
+                        font-weight:700;
+                    ">
+
+                    Create Account
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PASSWORD TOGGLE -->
+
+    <script>
+
+        function togglePassword() {
+
+            const password =
+                document.getElementById(
+                    "password"
+                );
+
+            const icon =
+                document.querySelector(
+                    ".toggle-password"
+                );
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                icon.classList.remove(
+                    "fa-eye"
+                );
+
+                icon.classList.add(
+                    "fa-eye-slash"
+                );
+
+            } else {
+
+                password.type = "password";
+
+                icon.classList.remove(
+                    "fa-eye-slash"
+                );
+
+                icon.classList.add(
+                    "fa-eye"
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

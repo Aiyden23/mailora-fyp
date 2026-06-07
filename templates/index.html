@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Mailora Threat Investigation Workstation</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOPBAR
+    ========================================== -->
+
+    <div class="topbar">
+
+        <div style="display:flex; align-items:center; gap:20px;">
+
+            <span class="menu-btn" onclick="toggleMenu()">
+
+                ☰
+
+            </span>
+
+            <h2>
+
+                MAILORA Threat Investigation Workstation
+
+            </h2>
+
+        </div>
+
+        <div>
+
+            <span class="status-active">
+
+                INVESTIGATION ENGINE ACTIVE
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <div id="sidebar" class="sidebar">
+
+        <a href="/dashboard">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="/home">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Threat Analyzer
+
+        </a>
+
+        <a href="/history">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            Investigations
+
+        </a>
+
+        <a href="/simulator">
+
+            <i class="fa-solid fa-bug"></i>
+
+            Threat Simulator
+
+        </a>
+
+        <a href="/account">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            Account Center
+
+        </a>
+
+        <a href="/logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+    <!-- =========================================
+         OVERLAY
+    ========================================== -->
+
+    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             HERO HEADER
+        ========================================== -->
+
+        <div class="dashboard-header">
+
+            <div style="position:relative; z-index:2;">
+
+                <span class="threat-badge suspicious">
+
+                    PHISHING INVESTIGATION ENGINE
+
+                </span>
+
+                <br><br>
+
+                <h1>
+
+                    Enterprise Threat Investigation Workstation
+
+                </h1>
+
+                <p>
+
+                    Submit suspicious emails for advanced phishing investigation,
+                    behavioral threat analysis,
+                    URL intelligence extraction,
+                    and cybersecurity threat classification
+                    using Mailora’s intelligent investigation engine.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+             MAIN ANALYZER GRID
+        ========================================== -->
+
+        <div class="dashboard-grid">
+
+            <!-- =========================================
+                 ANALYZER PANEL
+            ========================================== -->
+
+            <div class="result-box">
+
+                <div class="table-header">
+
+                    <h2>
+
+                        Threat Investigation Console
+
+                    </h2>
+
+                    <span class="status-active">
+
+                        READY
+
+                    </span>
+
+                </div>
+
+                <br>
+
+                <form method="POST">
+
+                    <label>
+
+                        Suspicious Email Evidence
+
+                    </label>
+
+                    <textarea name="email" rows="16"
+                        placeholder="Paste suspicious email content here for phishing investigation, URL analysis, social engineering detection, and cyber threat classification..."
+                        required></textarea>
+
+                    <br><br>
+
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+
+                        <button type="submit">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            Start Investigation
+
+                        </button>
+
+                        <button type="reset">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Clear Evidence
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- =========================================
+                 LIVE STATUS PANEL
+            ========================================== -->
+
+            <div class="live-status">
+
+                <h2>
+
+                    Investigation Engine Status
+
+                </h2>
+
+                <br>
+
+                <div class="status-item">
+
+                    <span>
+
+                        AI Threat Analysis Engine
+
+                    </span>
+
+                    <span class="status-active">
+
+                        ACTIVE
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Phishing Detection System
+
+                    </span>
+
+                    <span class="status-active">
+
+                        RUNNING
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        URL Intelligence Scanner
+
+                    </span>
+
+                    <span class="status-active">
+
+                        ENABLED
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Social Engineering Detection
+
+                    </span>
+
+                    <span class="status-active">
+
+                        MONITORING
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Threat Intelligence Database
+
+                    </span>
+
+                    <span class="status-active">
+
+                        SECURE
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Behavioral Analysis Engine
+
+                    </span>
+
+                    <span class="status-active">
+
+                        ONLINE
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+             INVESTIGATION WORKFLOW
+        ========================================== -->
+
+        <div class="recommendation">
+
+            <h2>
+
+                Cyber Investigation Workflow
+
+            </h2>
+
+            <br>
+
+            <div class="status-item">
+
+                <span>
+
+                    1. Suspicious Email Submitted
+
+                </span>
+
+                <span class="threat-badge safe">
+
+                    READY
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    2. Threat Intelligence Extraction
+
+                </span>
+
+                <span class="threat-badge suspicious">
+
+                    ACTIVE
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    3. URL & Behavioral Analysis
+
+                </span>
+
+                <span class="threat-badge high">
+
+                    PROCESSING
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    4. Threat Classification & Risk Assessment
+
+                </span>
+
+                <span class="threat-badge critical">
+
+                    MONITORING
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+             THREAT DETECTION FEATURES
+        ========================================== -->
+
+        <div class="dashboard-grid">
+
+            <!-- DETECTION CAPABILITIES -->
+
+            <div class="recommendation">
+
+                <h2>
+
+                    Threat Detection Capabilities
+
+                </h2>
+
+                <br>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Credential Harvesting Detection
+
+                    </span>
+
+                    <span class="threat-badge critical">
+
+                        ACTIVE
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Fake Banking Email Analysis
+
+                    </span>
+
+                    <span class="threat-badge high">
+
+                        MONITORING
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Malicious URL Intelligence
+
+                    </span>
+
+                    <span class="threat-badge suspicious">
+
+                        SCANNING
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Social Engineering Detection
+
+                    </span>
+
+                    <span class="threat-badge safe">
+
+                        ENABLED
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Behavioral Threat Analysis
+
+                    </span>
+
+                    <span class="threat-badge high">
+
+                        ACTIVE
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- CYBERSECURITY AWARENESS -->
+
+            <div class="recommendation">
+
+                <h2>
+
+                    Cybersecurity Awareness Guidance
+
+                </h2>
+
+                <br>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Verify sender domains carefully
+
+                    </span>
+
+                    <span class="threat-badge safe">
+
+                        TIP
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Avoid clicking suspicious links
+
+                    </span>
+
+                    <span class="threat-badge high">
+
+                        ALERT
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Never share passwords via email
+
+                    </span>
+
+                    <span class="threat-badge critical">
+
+                        WARNING
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Enable multi-factor authentication
+
+                    </span>
+
+                    <span class="threat-badge safe">
+
+                        RECOMMENDED
+
+                    </span>
+
+                </div>
+
+                <div class="status-item">
+
+                    <span>
+
+                        Report phishing attempts immediately
+
+                    </span>
+
+                    <span class="threat-badge suspicious">
+
+                        SECURITY
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================================
+             LIVE THREAT FEED
+        ========================================== -->
+
+        <div class="recommendation">
+
+            <div class="table-header">
+
+                <h2>
+
+                    Live Threat Intelligence Feed
+
+                </h2>
+
+                <span class="status-active">
+
+                    LIVE MONITORING
+
+                </span>
+
+            </div>
+
+            <br>
+
+            <div class="status-item">
+
+                <span>
+
+                    [!] Credential Harvesting Campaign Identified
+
+                </span>
+
+                <span class="threat-badge critical">
+
+                    HIGH
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    [!] Fake Banking Domain Investigated
+
+                </span>
+
+                <span class="threat-badge high">
+
+                    RISK
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    [✓] Legitimate Corporate Email Verified
+
+                </span>
+
+                <span class="threat-badge safe">
+
+                    SAFE
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    [!] Suspicious Password Reset Attempt Detected
+
+                </span>
+
+                <span class="threat-badge suspicious">
+
+                    ALERT
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        function toggleMenu() {
+
+            var sidebar =
+                document.getElementById("sidebar");
+
+            var overlay =
+                document.getElementById("overlay");
+
+            if (sidebar.style.left === "0px") {
+
+                sidebar.style.left = "-280px";
+
+                overlay.classList.remove("active");
+
+            } else {
+
+                sidebar.style.left = "0px";
+
+                overlay.classList.add("active");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

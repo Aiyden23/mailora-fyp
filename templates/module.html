@@ -1,0 +1,633 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ module_title }} | Mailora Academy
+{% endblock %}
+
+{% block content %}
+
+<div style="display:flex; gap:28px; align-items:flex-start;">
+
+    <!-- =========================================
+         LEFT SIDEBAR
+    ========================================== -->
+
+    <div style="
+        width:340px;
+        min-width:340px;
+        background:#071224;
+        border:1px solid rgba(255,255,255,0.06);
+        border-radius:28px;
+        padding:28px;
+        position:sticky;
+        top:30px;
+        height:calc(100vh - 120px);
+        overflow-y:auto;
+    ">
+
+        <!-- MODULE HEADER -->
+
+        <div style="margin-bottom:28px;">
+
+            <span style="
+                background:rgba(212,166,79,0.12);
+                color:#F4C56A;
+                padding:8px 14px;
+                border-radius:30px;
+                font-size:12px;
+                font-weight:600;
+                letter-spacing:1px;
+            ">
+                CYBER ACADEMY
+            </span>
+
+            <h2 style="
+                margin-top:18px;
+                font-size:28px;
+                line-height:1.3;
+                color:white;
+            ">
+                {{ module_title }}
+            </h2>
+
+            <p style="
+                color:#8B98AE;
+                margin-top:14px;
+                line-height:1.8;
+                font-size:14px;
+            ">
+                Structured cybersecurity learning designed for phishing awareness,
+                threat intelligence, and enterprise security understanding.
+            </p>
+
+        </div>
+
+        <!-- PROGRESS -->
+
+        <div style="margin-bottom:32px;">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:12px;
+            ">
+
+                <span style="
+                    color:#A8B3C7;
+                    font-size:14px;
+                ">
+                    Module Progress
+                </span>
+
+                <span style="
+                    color:#F4C56A;
+                    font-weight:600;
+                    font-size:14px;
+                ">
+                    {{ progress }}%
+                </span>
+
+            </div>
+
+            <!-- PROGRESS BAR -->
+
+            <div style="
+                width:100%;
+                height:10px;
+                background:#0B1325;
+                border-radius:30px;
+                overflow:hidden;
+            ">
+
+                <div style="
+                    height:100%;
+                    width: {{ progress }}%;
+                    background:linear-gradient(90deg, #D4A64F, #F4C56A);
+                    border-radius:30px;
+                "></div>
+
+            </div>
+
+        </div>
+
+        <!-- CHAPTER LIST -->
+
+        <div>
+
+            {% if module_data.get("sections") %}
+
+            {% for section_name, section in module_data["sections"].items() %}
+
+            <h4 style="
+            color:#F4C56A;
+            margin-bottom:12px;
+            margin-top:22px;
+            font-size:13px;
+            letter-spacing:1px;
+        ">
+                {{ section_name }}
+            </h4>
+
+            {% for chapter_num, chapter in section["chapters"].items() %}
+
+            <a href="/module/{{ module_id }}/chapter/{{ chapter_num }}" style="text-decoration:none;">
+
+                <div style="
+                padding:12px 16px;
+                margin-bottom:8px;
+                border-radius:14px;
+
+                background:
+                {% if chapter_num == chapter_id %}
+                rgba(212,166,79,0.10)
+                {% else %}
+                transparent
+                {% endif %};
+            ">
+
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:10px;
+                ">
+
+                        <div style="
+                            width:18px;
+                            height:18px;
+
+                            border-radius:50%;
+
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+
+                            font-size:10px;
+                            font-weight:700;
+
+                            background:
+                            {% if chapter_num < chapter_id %}
+                            rgba(60,177,121,0.15)
+
+                            {% elif chapter_num == chapter_id %}
+                            rgba(212,166,79,0.15)
+
+                            {% else %}
+                            rgba(255,255,255,0.05)
+                            {% endif %};
+
+                            color:
+                            {% if chapter_num < chapter_id %}
+                            #3CB179
+
+                            {% elif chapter_num == chapter_id %}
+                            #F4C56A
+
+                            {% else %}
+                            #8B98AE
+                            {% endif %};
+                        ">
+
+                            {% if chapter_num < chapter_id %} ✓ {% elif chapter_num==chapter_id %} ● {% else %} ○ {%
+                                endif %} </div>
+
+                                <span style="
+                            color:
+                            {% if chapter_num == chapter_id %}
+                            white
+                            {% else %}
+                            #A8B3C7
+                            {% endif %};
+
+                            font-size:13px;
+                        ">
+                                    {{ chapter.title }}
+                                </span>
+
+                        </div>
+
+                    </div>
+
+            </a>
+
+            {% endfor %}
+
+            {% endfor %}
+
+            {% else %}
+
+            {% for chapter_num, chapter in chapters.items() %}
+
+            <a href="/module/{{ module_id }}/chapter/{{ chapter_num }}" style="text-decoration:none;">
+
+                <div style="
+            padding:12px 16px;
+            margin-bottom:8px;
+            border-radius:14px;
+
+            background:
+            {% if chapter_num == chapter_id %}
+            rgba(212,166,79,0.10)
+            {% else %}
+            transparent
+            {% endif %};
+        ">
+
+                    <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:10px;
+                ">
+
+                        <div style="
+                            width:18px;
+                            height:18px;
+
+                            border-radius:50%;
+
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+
+                            font-size:10px;
+                            font-weight:700;
+
+                            background:
+                            {% if chapter_num < chapter_id %}
+                            rgba(60,177,121,0.15)
+
+                            {% elif chapter_num == chapter_id %}
+                            rgba(212,166,79,0.15)
+
+                            {% else %}
+                            rgba(255,255,255,0.05)
+                            {% endif %};
+
+                            color:
+                            {% if chapter_num < chapter_id %}
+                            #3CB179
+
+                            {% elif chapter_num == chapter_id %}
+                            #F4C56A
+
+                            {% else %}
+                            #8B98AE
+                            {% endif %};
+                        ">
+
+                            {% if chapter_num < chapter_id %} ✓ {% elif chapter_num==chapter_id %} ● {% else %} ○ {%
+                                endif %} </div>
+
+                                <span style="
+                            color:
+                            {% if chapter_num == chapter_id %}
+                            white
+                            {% else %}
+                            #A8B3C7
+                            {% endif %};
+
+                            font-size:13px;
+                        ">
+                                    {{ chapter.title }}
+                                </span>
+
+                        </div>
+                    </div>
+
+
+            </a>
+
+            {% endfor %}
+
+            {% endif %}
+
+        </div>
+    </div>
+    <!-- =========================================
+         RIGHT CONTENT
+    ========================================== -->
+
+    <div style="flex:1;">
+
+        <!-- TOP SECTION -->
+
+        <div style="
+            background:#071224;
+            border:1px solid rgba(255,255,255,0.06);
+            border-radius:28px;
+            padding:22px;
+            margin-bottom:16px;
+        ">
+
+            <!-- BREADCRUMB -->
+
+            <div style="
+                display:flex;
+                align-items:center;
+                gap:10px;
+                color:#8B98AE;
+                font-size:14px;
+                margin-bottom:20px;
+            ">
+
+                <span>Cyber Academy</span>
+
+                <span>></span>
+
+                <span>{{ module_title }}</span>
+
+                <span>></span>
+
+                <span style="
+                color:#F4C56A;
+                 font-weight:600;
+            ">
+
+                    {{ chapter_title }}
+
+                </span>
+
+            </div>
+
+            <!-- TITLE -->
+
+            <h1 style="
+                color:white;
+                font-size:42px;
+                line-height:1.2;
+                margin-bottom:10px;
+                font-weight:700;
+            ">
+
+                {{ chapter_title }}
+
+            </h1>
+
+
+            {% if chapter_content.strip() %}
+
+            <div style="
+    background:linear-gradient(
+        135deg,
+        #071224,
+        #020817
+    );
+
+    border:1px solid rgba(212,166,79,0.12);
+
+    border-radius:24px;
+
+    padding:26px;
+
+    box-shadow:
+    0 0 30px rgba(212,166,79,0.04);
+">
+
+                <!-- INTELLIGENCE STRIP -->
+
+                <div style="
+        display:flex;
+        gap:40px;
+        flex-wrap:wrap;
+
+        padding-bottom:18px;
+        margin-bottom:22px;
+
+        border-bottom:
+        1px solid rgba(255,255,255,0.06);
+    ">
+
+                    <div>
+
+                        <div style="
+                color:#8B98AE;
+                font-size:11px;
+                letter-spacing:1px;
+                margin-bottom:6px;
+            ">
+                            CATEGORY
+                        </div>
+
+                        <div style="
+                color:white;
+                font-size:15px;
+                font-weight:600;
+            ">
+                            {{ category }}
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div style="
+                color:#8B98AE;
+                font-size:11px;
+                letter-spacing:1px;
+                margin-bottom:6px;
+            ">
+                            RISK LEVEL
+                        </div>
+
+                        <div style="
+                color:
+                {% if risk == 'Critical' %}
+                #E05A5A
+                {% elif risk == 'High' %}
+                #FF7B72
+                {% elif risk == 'Medium' %}
+                #D4A64F
+                {% else %}
+                #3CB179
+                {% endif %};
+
+                font-size:15px;
+                font-weight:600;
+            ">
+                            {{ risk }}
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div style="
+                color:#8B98AE;
+                font-size:11px;
+                letter-spacing:1px;
+                margin-bottom:6px;
+            ">
+                            ATTACK VECTOR
+                        </div>
+
+                        <div style="
+                color:#4D7CFE;
+                font-size:15px;
+                font-weight:600;
+            ">
+                            {{ vector }}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CONTENT -->
+
+                <div style="
+        color:#DDE3EA;
+
+        font-size:18px;
+
+        line-height:2;
+
+        white-space:pre-line;
+
+        letter-spacing:0.2px;
+    ">
+
+                    {{ chapter_content }}
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            <div style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-top:30px;
+    padding-top:24px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.06);
+">
+
+                <!-- PREVIOUS -->
+
+                {% if previous_chapter >= 1 %}
+
+                <a href="/module/{{ module_id }}/chapter/{{ previous_chapter }}" style="text-decoration:none;">
+
+                    <button style="
+            background:rgba(255,255,255,0.03);
+
+            border:1px solid
+            rgba(255,255,255,0.08);
+
+            color:white;
+
+            padding:16px 28px;
+
+            border-radius:16px;
+
+            cursor:pointer;
+
+            font-size:15px;
+
+            font-weight:600;
+
+            transition:0.3s;
+        ">
+
+                        ← Previous Topic
+
+                    </button>
+
+                </a>
+
+                {% else %}
+
+                <div></div>
+
+                {% endif %}
+
+                <!-- NEXT -->
+
+                {% if next_chapter <= total_chapters %} <a href="/module/{{ module_id }}/chapter/{{ next_chapter }}"
+                    style="text-decoration:none;">
+
+                    <button style="
+            background:
+            linear-gradient(
+                135deg,
+                #D4A64F,
+                #E8B84D
+            );
+
+            border:none;
+
+            color:#020817;
+
+            padding:16px 34px;
+
+            border-radius:16px;
+
+            cursor:pointer;
+
+            font-size:15px;
+
+            font-weight:700;
+
+            box-shadow:
+            0 10px 30px
+            rgba(212,166,79,0.22);
+        ">
+
+                        Next Topic →
+
+                    </button>
+
+                    </a>
+
+                    {% else %}
+
+                    <a href="/academy" style="text-decoration:none;">
+
+                        <button style="
+            background:
+            linear-gradient(
+                135deg,
+                #D4A64F,
+                #E8B84D
+            );
+
+            border:none;
+
+            color:#020817;
+
+            padding:16px 34px;
+
+            border-radius:16px;
+
+            cursor:pointer;
+
+            font-size:15px;
+
+            font-weight:700;
+
+            box-shadow:
+            0 10px 30px
+            rgba(212,166,79,0.22);
+        ">
+
+                            ✓ Complete Module
+
+                        </button>
+
+                    </a>
+
+                    {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,528 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Investigation | Mailora
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<div class="dashboard-header">
+
+    <span class="threat-badge suspicious">
+
+        UPDATE INVESTIGATION RECORD
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Edit Investigation
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:820px;
+        margin-top:18px;
+    ">
+
+        Modify phishing investigation details,
+        update suspicious threat information,
+        manage intelligence findings,
+        and maintain accurate cybersecurity records
+        through Mailora investigation workflows.
+
+    </p>
+
+</div>
+
+<!-- =========================================
+     MAIN GRID
+========================================= -->
+
+<div class="dashboard-grid">
+
+    <!-- =========================================
+         LEFT PANEL
+    ========================================== -->
+
+    <div class="result-box">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Update Form
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                EDIT MODE
+
+            </span>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form method="POST">
+
+            <!-- SUBJECT -->
+
+            <div class="enterprise-input-group">
+
+                <label>
+
+                    EMAIL SUBJECT
+
+                </label>
+
+                <input type="text" value="Investigation #{{ case.id }}" readonly>
+
+            </div>
+
+            <!-- URL -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    SUSPICIOUS URL
+
+                </label>
+
+                <input type="text" name="url" value="{{ case.url }}">
+
+            </div>
+
+            <!-- EMAIL CONTENT -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    EMAIL CONTENT
+
+                </label>
+
+                <textarea name="email_content" required>{{ case.email_content }}</textarea>
+
+            </div>
+
+            <!-- NOTES -->
+
+            <div class="enterprise-input-group" style="margin-top:22px;">
+
+                <label>
+
+                    INVESTIGATION NOTES
+
+                </label>
+
+                <textarea name="email_content">
+
+                Analyst review notes...
+
+                </textarea>
+
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="action-buttons">
+
+                <!-- UPDATE -->
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Update Investigation
+
+                </button>
+
+                <!-- CANCEL -->
+
+                <a href="/history">
+
+                    <button type="button" class="secondary-btn">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancel
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- =========================================
+         RIGHT PANEL
+    ========================================== -->
+
+    <div class="live-status">
+
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Status
+
+            </h2>
+
+            <span class="status-pill">
+
+                ACTIVE
+
+            </span>
+
+        </div>
+
+        <!-- STATUS ITEMS -->
+
+        <div class="status-item">
+
+            <span>
+
+                Record Synchronization
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                ONLINE
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Threat Intelligence Engine
+
+            </span>
+
+            <span class="threat-badge high">
+
+                ACTIVE
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                URL Analysis System
+
+            </span>
+
+            <span class="threat-badge suspicious">
+
+                RUNNING
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Investigation Database
+
+            </span>
+
+            <span class="threat-badge safe">
+
+                SECURE
+
+            </span>
+
+        </div>
+
+        <!-- =========================================
+             QUICK GUIDELINES
+        ========================================== -->
+
+        <div class="recommendation" style="
+                margin-top:28px;
+                padding:24px;
+            ">
+
+            <div class="table-header" style="margin-bottom:18px;">
+
+                <h2 style="font-size:20px;">
+
+                    Editing Guidelines
+
+                </h2>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Verify suspicious URLs carefully
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Maintain investigation accuracy
+
+                </span>
+
+            </div>
+
+            <div class="status-item">
+
+                <span>
+
+                    Update phishing indicators properly
+
+                </span>
+
+            </div>
+
+            <div class="status-item" style="border-bottom:none;">
+
+                <span>
+
+                    Save changes before exiting
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     LOWER GRID
+========================================= -->
+
+<div class="dashboard-grid" style="margin-top:24px;">
+
+    <!-- =========================================
+         RECENT ACTIVITY
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Investigation Activity
+
+            </h2>
+
+            <span class="threat-badge high">
+
+                UPDATED
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Threat information modified securely
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                Investigation records synchronized
+
+            </span>
+
+        </div>
+
+        <div class="status-item">
+
+            <span>
+
+                AI intelligence engine refreshed
+
+            </span>
+
+        </div>
+
+        <div class="status-item" style="border-bottom:none;">
+
+            <span>
+
+                Operational workflow maintained
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         WORKFLOW TIMELINE
+    ========================================== -->
+
+    <div class="recommendation">
+
+        <div class="table-header">
+
+            <h2>
+
+                Editing Workflow
+
+            </h2>
+
+            <span class="threat-badge safe">
+
+                PROCESS
+
+            </span>
+
+        </div>
+
+        <!-- TIMELINE -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Investigation Loaded
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Existing phishing investigation retrieved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Threat Information Updated
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Investigation details modified securely.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Database Synchronization
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Updated intelligence record synchronized.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div>
+
+                <h4>
+
+                    Investigation Saved
+
+                </h4>
+
+                <p style="
+                    color:#9BA6B7;
+                    margin-top:6px;
+                ">
+
+                    Final investigation update completed.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

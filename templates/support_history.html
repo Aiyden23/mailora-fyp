@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}
+Support History | Mailora
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <span class="threat-badge high">
+
+        SUPPORT TICKETS
+
+    </span>
+
+    <h1 style="
+        font-size:52px;
+        margin-top:20px;
+        line-height:1.1;
+    ">
+
+        Support Request History
+
+    </h1>
+
+    <p style="
+        font-size:17px;
+        max-width:780px;
+        margin-top:18px;
+    ">
+
+        Review previously submitted
+        support requests, ticket status,
+        and support communications.
+
+    </p>
+
+</div>
+
+<div class="result-box">
+
+    <div class="table-header">
+
+        <h2>
+
+            Submitted Tickets
+
+        </h2>
+
+        <span class="threat-badge safe">
+
+            {{ tickets|length }} TICKETS
+
+        </span>
+
+    </div>
+
+    {% if tickets %}
+
+    {% for ticket in tickets %}
+
+    <div class="academy-card" style="margin-bottom:18px;">
+
+        <div class="table-header">
+
+            <h3>
+
+                Ticket #{{ ticket['id'] }}
+
+            </h3>
+
+            <span class="threat-badge high">
+
+                {{ ticket['status'] }}
+
+            </span>
+
+        </div>
+
+        <p style="
+                color:#F4C56A;
+                margin-top:10px;
+                margin-bottom:12px;
+            ">
+
+            {{ ticket['category'] }}
+
+        </p>
+
+        <p style="
+                color:#A8B3C7;
+                line-height:1.8;
+            ">
+
+            {{ ticket['message'] }}
+
+        </p>
+
+        <hr style="
+                margin:18px 0;
+                border:none;
+                border-top:1px solid rgba(255,255,255,0.08);
+            ">
+
+        <small style="
+                color:#8B98AE;
+            ">
+
+            Submitted:
+            {{ ticket['created_at'] }}
+
+        </small>
+
+    </div>
+
+    {% endfor %}
+
+    {% else %}
+
+    <div style="
+            text-align:center;
+            padding:50px;
+            color:#8B98AE;
+        ">
+
+        <i class="fa-solid fa-ticket" style="
+                font-size:42px;
+                margin-bottom:15px;
+            "></i>
+
+        <h3>
+
+            No Support Requests Found
+
+        </h3>
+
+        <p>
+
+            Submit a support request to
+            create your first ticket.
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <div style="
+        margin-top:20px;
+    ">
+
+        <a href="/help" style="text-decoration:none;">
+
+            <button class="secondary-btn">
+
+                Back to Help Center
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
