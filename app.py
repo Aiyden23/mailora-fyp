@@ -44,7 +44,7 @@ from reportlab.lib.pagesizes import A4
 app = Flask(__name__)
 app.secret_key = "mailora_secret"
 phishing_df = pd.read_csv(
-    "datasets/phishing_email.csv",
+    "datasets/phishing_email_small.csv",
     low_memory=False
 )
 
@@ -168,7 +168,7 @@ init_db()
 print("Loading phishing dataset...")
 
 phishing_df = pd.read_csv(
-    "datasets/phishing_email.csv"
+    "datasets/phishing_email_small.csv"
 )
 
 vectorizer = TfidfVectorizer(
